@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manutenção Mecânica - Banner</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Banner Container */
+        .banner-container {
+            width: 100%;
+            max-width: 1600px;
+            padding: 2rem;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Animated Circles Background */
+        .circles-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+
+        .circle {
+            position: absolute;
+            border: 3px solid #4ecdc4;
+            border-radius: 50%;
+        }
+
+        .circle.large {
+            width: 350px;
+            height: 350px;
+            top: -100px;
+            left: 5%;
+            border-color: rgba(78, 205, 196, 0.3);
+        }
+
+        .circle.large-inner {
+            width: 200px;
+            height: 200px;
+            top: -25px;
+            left: 12.5%;
+            border-color: rgba(78, 205, 196, 0.5);
+        }
+
+        .circle.medium {
+            width: 300px;
+            height: 300px;
+            top: 50px;
+            right: 10%;
+            border-color: rgba(78, 205, 196, 0.3);
+        }
+
+        .circle.medium-inner {
+            width: 180px;
+            height: 180px;
+            top: 110px;
+            right: 14%;
+            border-color: rgba(78, 205, 196, 0.5);
+        }
+
+        /* Hero Icon */
+        .hero-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 15px 50px rgba(255, 107, 107, 0.4);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Hero Title */
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        /* Hero Subtitle */
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #b8b8b8;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        /* Date Time Stats */
+        .datetime-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 10;
+        }
+
+        .datetime-item {
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .datetime-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #4ecdc4;
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .datetime-label {
+            font-size: 0.85rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-banner {
+                height: auto;
+                padding: 3rem 1.5rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .datetime-stats {
+                gap: 2rem;
+            }
+
+            .datetime-number {
+                font-size: 2rem;
+            }
+
+            .circle.large {
+                width: 250px;
+                height: 250px;
+            }
+
+            .circle.large-inner {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-container">
+        <!-- Hero Banner -->
+        <div class="hero-banner">
+            <!-- Background Circles -->
+            <div class="circles-container">
+                <div class="circle large"></div>
+                <div class="circle large-inner"></div>
+                <div class="circle medium"></div>
+                <div class="circle medium-inner"></div>
+            </div>
+
+            <!-- Icon -->
+            <div class="hero-icon">
+                <i class="fas fa-cog"></i>
+            </div>
+
+            <!-- Title -->
+            <h1 class="hero-title">Manutenção Mecânica</h1>
+
+            <!-- Subtitle -->
+            <p class="hero-subtitle">Coordenador: Erik Duran | Excelência em Precisão e Performance</p>
+
+            <!-- Date Time Stats -->
+            <div class="datetime-stats">
+                <div class="datetime-item">
+                    <span class="datetime-number" id="dia">15</span>
+                    <span class="datetime-label">Dia</span>
+                </div>
+                <div class="datetime-item">
+                    <span class="datetime-number" id="mes">02</span>
+                    <span class="datetime-label">Mês</span>
+                </div>
+                <div class="datetime-item">
+                    <span class="datetime-number" id="ano">2025</span>
+                    <span class="datetime-label">Ano</span>
+                </div>
+                <div class="datetime-item">
+                    <span class="datetime-number" id="hora">14:30</span>
+                    <span class="datetime-label">Hora</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            
+            // Dia
+            document.getElementById('dia').textContent = String(now.getDate()).padStart(2, '0');
+            
+            // Mês
+            document.getElementById('mes').textContent = String(now.getMonth() + 1).padStart(2, '0');
+            
+            // Ano
+            document.getElementById('ano').textContent = now.getFullYear();
+            
+            // Hora
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('hora').textContent = `${hours}:${minutes}`;
+        }
+
+        // Atualizar a cada segundo
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
