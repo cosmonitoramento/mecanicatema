@@ -50,6 +50,45 @@
             box-shadow: none;
         }
 
+        /* ── BACK BUTTON ── */
+        .back-button {
+            position: absolute;
+            top: 1.2rem;
+            left: 1.2rem;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: background 0.25s, border-color 0.25s, transform 0.2s;
+            letter-spacing: 0.3px;
+        }
+
+        .back-button i {
+            font-size: 1rem;
+            color: #4ecdc4;
+            transition: color 0.25s;
+        }
+
+        .back-button:hover {
+            background: rgba(78, 205, 196, 0.2);
+            border-color: rgba(78, 205, 196, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .back-button:hover i {
+            color: #ffffff;
+        }
+
         /* Animated Circles Background */
         .circles-container {
             position: absolute;
@@ -66,7 +105,6 @@
             border-style: solid;
         }
 
-        /* Adding visual markers to show rotation */
         .circle-gear::before {
             content: '';
             position: absolute;
@@ -90,7 +128,6 @@
             right: 20%;
         }
 
-        /* Large outer circle - left */
         .circle-1 {
             width: 280px;
             height: 280px;
@@ -99,9 +136,9 @@
             border-width: 3px;
             border-color: rgba(78, 205, 196, 0.8);
             box-shadow: 0 0 30px rgba(78, 205, 196, 0.3);
+            animation: rotateClockwise 40s linear infinite;
         }
 
-        /* Large inner circle - left */
         .circle-2 {
             width: 180px;
             height: 180px;
@@ -110,9 +147,9 @@
             border-width: 2px;
             border-color: rgba(100, 220, 200, 0.7);
             box-shadow: 0 0 20px rgba(100, 220, 200, 0.3);
+            animation: rotateCounterClockwise 30s linear infinite;
         }
 
-        /* Medium circle - right top */
         .circle-3 {
             width: 250px;
             height: 250px;
@@ -121,9 +158,9 @@
             border-width: 3px;
             border-color: rgba(78, 205, 196, 0.75);
             box-shadow: 0 0 25px rgba(78, 205, 196, 0.3);
+            animation: rotateClockwise 35s linear infinite;
         }
 
-        /* Medium inner circle - right top */
         .circle-4 {
             width: 160px;
             height: 160px;
@@ -132,9 +169,9 @@
             border-width: 2px;
             border-color: rgba(100, 220, 200, 0.85);
             box-shadow: 0 0 20px rgba(100, 220, 200, 0.4);
+            animation: rotateCounterClockwise 25s linear infinite;
         }
 
-        /* Small circle - right bottom */
         .circle-5 {
             width: 200px;
             height: 200px;
@@ -143,9 +180,9 @@
             border-width: 2px;
             border-color: rgba(78, 205, 196, 0.7);
             box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
+            animation: rotateClockwise 45s linear infinite;
         }
 
-        /* Small inner circle - right bottom */
         .circle-6 {
             width: 130px;
             height: 130px;
@@ -154,9 +191,9 @@
             border-width: 2px;
             border-color: rgba(100, 220, 200, 0.8);
             box-shadow: 0 0 15px rgba(100, 220, 200, 0.3);
+            animation: rotateCounterClockwise 35s linear infinite;
         }
 
-        /* Additional decorative circles */
         .circle-7 {
             width: 150px;
             height: 150px;
@@ -165,6 +202,7 @@
             border-width: 2px;
             border-color: rgba(78, 205, 196, 0.6);
             box-shadow: 0 0 18px rgba(78, 205, 196, 0.25);
+            animation: rotateClockwise 50s linear infinite;
         }
 
         .circle-8 {
@@ -175,63 +213,20 @@
             border-width: 1px;
             border-color: rgba(100, 220, 200, 0.65);
             box-shadow: 0 0 12px rgba(100, 220, 200, 0.25);
-        }
-
-        /* Rotation animations */
-        .circle-1 {
-            animation: rotateClockwise 40s linear infinite;
-        }
-
-        .circle-2 {
-            animation: rotateCounterClockwise 30s linear infinite;
-        }
-
-        .circle-3 {
-            animation: rotateClockwise 35s linear infinite;
-        }
-
-        .circle-4 {
-            animation: rotateCounterClockwise 25s linear infinite;
-        }
-
-        .circle-5 {
-            animation: rotateClockwise 45s linear infinite;
-        }
-
-        .circle-6 {
-            animation: rotateCounterClockwise 35s linear infinite;
-        }
-
-        .circle-7 {
-            animation: rotateClockwise 50s linear infinite;
-        }
-
-        .circle-8 {
             animation: rotateCounterClockwise 40s linear infinite;
         }
 
         @keyframes rotateClockwise {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
+            0%   { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
         @keyframes rotateCounterClockwise {
-            0% {
-                transform: rotate(360deg);
-            }
-            100% {
-                transform: rotate(0deg);
-            }
+            0%   { transform: rotate(360deg); }
+            100% { transform: rotate(0deg); }
         }
 
-        /* Additional smoke layers */
-        .smoke-layer {
-            display: none;
-        }
+        .smoke-layer { display: none; }
 
         /* Hero Content */
         .hero-content {
@@ -325,9 +320,8 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero-banner {
-                padding-top: 0;
-            }
+            .back-button span { display: none; }
+            .back-button { padding: 0.5rem 0.7rem; }
 
             .hero-icon {
                 width: 60px;
@@ -336,16 +330,10 @@
                 margin-bottom: 0.6rem;
             }
 
-            .datetime-stats {
-                gap: 1rem;
-            }
+            .datetime-stats { gap: 1rem; }
         }
 
         @media (max-width: 480px) {
-            .hero-banner {
-                padding-top: 0;
-            }
-
             .hero-icon {
                 width: 50px;
                 height: 50px;
@@ -359,6 +347,13 @@
     <div class="banner-container">
         <!-- Hero Banner -->
         <div class="hero-banner">
+
+            <!-- ── BOTÃO VOLTAR ── -->
+            <a href="index.html" class="back-button">
+                <i class="fas fa-home"></i>
+                <span>Voltar ao Dashboard</span>
+            </a>
+
             <!-- Animated Circles/Gears Background -->
             <div class="circles-container">
                 <div class="circle-gear circle-1"></div>
@@ -408,23 +403,14 @@
     <script>
         function updateDateTime() {
             const now = new Date();
-            
-            // Dia
-            document.getElementById('dia').textContent = String(now.getDate()).padStart(2, '0');
-            
-            // Mês
-            document.getElementById('mes').textContent = String(now.getMonth() + 1).padStart(2, '0');
-            
-            // Ano
-            document.getElementById('ano').textContent = now.getFullYear();
-            
-            // Hora
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            document.getElementById('hora').textContent = `${hours}:${minutes}`;
+            document.getElementById('dia').textContent  = String(now.getDate()).padStart(2, '0');
+            document.getElementById('mes').textContent  = String(now.getMonth() + 1).padStart(2, '0');
+            document.getElementById('ano').textContent  = now.getFullYear();
+            const h = String(now.getHours()).padStart(2, '0');
+            const m = String(now.getMinutes()).padStart(2, '0');
+            document.getElementById('hora').textContent = `${h}:${m}`;
         }
 
-        // Atualizar a cada segundo
         updateDateTime();
         setInterval(updateDateTime, 1000);
     </script>
